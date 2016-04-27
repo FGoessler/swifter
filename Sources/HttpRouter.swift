@@ -63,6 +63,10 @@ public class HttpRouter {
         }
         return nil
     }
+
+    public func resetRoutes() {
+        rootNode = Node()
+    }
     
     private func inflate(inout node: Node, inout generator: IndexingGenerator<[String]>) -> Node {
         if let pathSegment = generator.next() {

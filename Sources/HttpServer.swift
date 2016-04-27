@@ -43,6 +43,10 @@ public class HttpServer: HttpServerIO {
         return router.routes();
     }
 
+    public func resetRoutes() {
+        router.resetRoutes()
+    }
+
     override public func dispatch(method: String, path: String) -> ([String:String], HttpRequest -> HttpResponse) {
         if let result = router.route(method, path: path) {
             return result
